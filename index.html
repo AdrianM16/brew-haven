@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brew Haven Coffee Shop</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        <span class="logo-icon">☕</span>
+        Brew Haven
+      </a>
+      <button class="menu-toggle">Menu ☰</button>
+      <nav>
+        <ul>
+          <li><a class="active" href="index.html">Home</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li>
+            <a class="cart-link" href="javascript:void(0)" onclick="openCart()">
+              Cart <span class="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero" style="background:url('images/hero-bg.jpg') center/cover no-repeat; position:relative; color:#fff; text-align:center; padding:120px 20px;">
+    <div style="position:relative; z-index:1;">
+      <h1>Brewed with Passion, Served with Love.</h1>
+      <p>Your cozy spot for coffee and conversations.</p>
+      <div style="display:flex;gap:12px;justify-content:center;margin-top:16px">
+        <a class="btn" href="products.html">View Our Menu</a>
+        <a class="btn outline" href="features.html">See Our Features</a>
+      </div>
+    </div>
+    <!-- Overlay effect -->
+    <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(62,39,35,0.6);"></div>
+  </section>
+
+
+  <!-- ABOUT US -->
+  <section class="section about">
+    <div class="container grid grid-2">
+      <div>
+        <h2>About Brew Haven</h2>
+        <p>
+          Brew Haven Coffee Shop was founded with one simple goal: to bring people together over the perfect cup of coffee. 
+          From ethically sourced beans to freshly baked pastries, we pride ourselves on creating a warm and welcoming space 
+          for students, professionals, and coffee lovers alike.
+        </p>
+        <p>
+          Whether you need a quiet place to study, a cozy nook to catch up with friends, or just a quick caffeine boost, 
+          Brew Haven has something special for you.
+        </p>
+        <a class="btn" href="features.html">Learn More</a>
+      </div>
+      <div>
+        <img src="images/about-brew.jpg" alt="About Brew Haven" style="border-radius:12px;">
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section">
+    <div class="container grid grid-3">
+      <div class="card feature">
+        <div class="icon">🌱</div>
+        <div><h3>Ethically Sourced</h3><p>Beans from sustainable farms brewed fresh daily.</p></div>
+      </div>
+      <div class="card feature">
+        <div class="icon">📶</div>
+        <div><h3>Work-Friendly</h3><p>Power outlets, quiet nooks, and reliable Wi-Fi.</p></div>
+      </div>
+      <div class="card feature">
+        <div class="icon">🎁</div>
+        <div><h3>Rewards</h3><p>Collect beans and redeem free drinks via our loyalty program.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PRODUCTS -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Customer Favorites</h2>
+      <div class="grid grid-3">
+        
+        <!-- Caramel Macchiato -->
+        <div class="card product">
+          <img src="images/caramel.jpg" alt="Caramel Macchiato">
+          <h3>Caramel Macchiato</h3>
+          <p>Espresso, milk, vanilla, and caramel drizzle.</p>
+          <strong>₱170</strong>
+          <button onclick="addToCart('Caramel Macchiato',170,'images/caramel-macchiato.jpg')">Add to Cart</button>
+        </div>
+        
+        <!-- Caffè Latte -->
+        <div class="card product">
+          <img src="images/latte.jpg" alt="Caffè Latte">
+          <h3>Caffè Latte</h3>
+          <p>Rich espresso with steamed milk.</p>
+          <strong>₱150</strong>
+          <button onclick="addToCart('Caffè Latte',150,'images/latte.jpg')">Add to Cart</button>
+        </div>
+        
+        <!-- New York Cheesecake -->
+        <div class="card product">
+          <img src="images/cheesecake.jpg" alt="New York Cheesecake">
+          <h3>New York Cheesecake</h3>
+          <p>Creamy slice topped with strawberry sauce.</p>
+          <strong>₱150</strong>
+          <button onclick="addToCart('New York Cheesecake',150,'images/cheesecake.jpg')">Add to Cart</button>
+        </div>
+
+      </div>
+      <div class="see-more">
+        <a class="btn outline" href="products.html">See Full Menu</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- TESTIMONIALS -->
+  <section class="section testimonials">
+    <div class="container">
+      <h2 class="section-title">What Our Customers Say</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <p>"Best coffee in town! The latte is smooth and the staff are super friendly."</p>
+          <strong>- Sarah, Student</strong>
+        </div>
+        <div class="card">
+          <p>"Perfect spot to work. Wi-Fi is fast and the atmosphere is peaceful."</p>
+          <strong>- Mark, Freelancer</strong>
+        </div>
+        <div class="card">
+          <p>"Their croissants are to die for. I always grab one with my cappuccino."</p>
+          <strong>- Jen, Regular Customer</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALL TO ACTION -->
+  <section class="section cta">
+    <div class="container" style="text-align:center">
+      <h2>Ready to Visit Us?</h2>
+      <p>Drop by our café or order online to enjoy your Brew Haven favorites.</p>
+      <a class="btn" href="contact.html">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- CART DRAWER -->
+  <div class="cart-drawer">
+    <div class="cart-header">
+      <strong>Your Cart</strong>
+      <button class="secondary" onclick="closeCart()">Close</button>
+    </div>
+    <div class="cart-items"></div>
+    <div class="cart-footer">
+      <div style="display:flex;justify-content:space-between;margin-bottom:8px">
+        <span>Total</span><strong class="cart-total">₱0.00</strong>
+      </div>
+      <button>Checkout</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h4>Brew Haven Coffee Shop</h4>
+        <p>4952 Brew Street, Manila, Philippines</p>
+        <p>Email: hello@brewhaven.ph</p>
+        <p>Phone: +63 912 345 6789</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <p>
+          <a href="https://facebook.com" target="_blank">📘 Facebook</a> | 
+          <a href="https://instagram.com" target="_blank">📸 Instagram</a> | 
+          <a href="https://twitter.com" target="_blank">🐦 Twitter</a>
+        </p>
+      </div>
+    </div>
+    <div class="container" style="text-align:center;margin-top:16px;">
+      © 2025 Brew Haven Coffee Shop. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
+

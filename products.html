@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brew Haven Products</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        <span class="logo-icon">☕</span>
+        Brew Haven
+      </a>
+      <button class="menu-toggle">Menu ☰</button>
+      <nav>
+        <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a class="active" href="products.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li>
+          <a class="cart-link" href="javascript:void(0)" onclick="openCart()">
+            Cart <span class="cart-count">0</span>
+          </a>
+        </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section container">
+    <h1>Our Menu</h1>
+    <p>Browse our carefully crafted drinks, pastries, and merchandise loved by our loyal customers.</p>
+
+    <!-- Search + Filters -->
+    <div class="search-row">
+      <input type="text" id="searchBar" placeholder="Search for products…">
+      <select id="filterCategory">
+        <option>All</option>
+        <option>Coffee</option>
+        <option>Pastry</option>
+        <option>Merch</option>
+      </select>
+      <select id="sortSelect">
+        <option value="nameAsc">Sort: Name (A→Z)</option>
+        <option value="nameDesc">Sort: Name (Z→A)</option>
+        <option value="priceAsc">Sort: Price (Low→High)</option>
+        <option value="priceDesc">Sort: Price (High→Low)</option>
+      </select>
+    </div>
+
+    <!-- Product Grid -->
+    <div id="productList" class="product-grid">
+      <!-- Coffee -->
+      <div class="product-card" data-category="Coffee">
+        <img src="images/cappuccino.jpg" alt="Cappuccino">
+        <h3>Cappuccino</h3>
+        <p>Espresso, foamed milk, dusted with cocoa.</p>
+        <span class="price">₱120</span>
+        <div class="rating">⭐️⭐️⭐️⭐️☆</div>
+        <button onclick="addToCart('Cappuccino', 120)">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="Coffee">
+        <img src="images/latte.jpg" alt="Latte">
+        <h3>Latte</h3>
+        <p>Rich espresso with steamed milk.</p>
+        <span class="price">₱110</span>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+        <button onclick="addToCart('Latte', 110)">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="Coffee">
+        <img src="images/espresso.jpg" alt="Espresso">
+        <h3>Espresso</h3>
+        <p>Strong and bold, pure espresso shot.</p>
+        <span class="price">₱90</span>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+        <button onclick="addToCart('Espresso', 90)">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="Coffee">
+        <img src="images/mocha.jpg" alt="Mocha">
+        <h3>Mocha</h3>
+        <p>Espresso with chocolate and steamed milk.</p>
+        <span class="price">₱130</span>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+        <button onclick="addToCart('Mocha', 130)">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="Coffee">
+        <img src="images/americano.jpg" alt="Americano">
+        <h3>Americano</h3>
+        <p>Simple, strong espresso with hot water.</p>
+        <span class="price">₱100</span>
+        <div class="rating">⭐️⭐️⭐️⭐️☆</div>
+        <button onclick="addToCart('Americano', 100)">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="Coffee">
+        <img src="images/caramel.jpg" alt="Caramel Macchiato">
+        <h3>Caramel Macchiato</h3>
+        <p>Espresso, milk, vanilla, and caramel drizzle.</p>
+        <span class="price">₱140</span>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+        <button onclick="addToCart('Caramel Macchiato', 140)">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="Coffee">
+        <img src="images/cold.jpg" alt="Cold Brew">
+        <h3>Cold Brew</h3>
+        <p>Smooth cold brewed coffee, refreshing and chilled.</p>
+        <span class="price">₱110</span>
+        <div class="rating">⭐️⭐️⭐️⭐️☆</div>
+        <button onclick="addToCart('Cold Brew', 110)">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="Coffee">
+        <img src="images/flat.jpg" alt="Flat White">
+        <h3>Flat White</h3>
+        <p>Velvety espresso with steamed milk, silky texture.</p>
+        <span class="price">₱125</span>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+        <button onclick="addToCart('Flat White', 125)">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="Coffee">
+        <img src="images/affogato.jpg" alt="Affogato">
+        <h3>Affogato</h3>
+        <p>Espresso poured over vanilla ice cream.</p>
+        <span class="price">₱150</span>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+        <button onclick="addToCart('Affogato', 150)">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="Coffee">
+        <img src="images/irish.jpg" alt="Irish Coffee">
+        <h3>Irish Coffee</h3>
+        <p>Espresso, whiskey, and cream for a special treat.</p>
+        <span class="price">₱170</span>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+        <button onclick="addToCart('Irish Coffee', 170)">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="Coffee">
+        <img src="images/matcha.jpg" alt="Matcha Latte">
+        <h3>Matcha Latte</h3>
+        <p>Green tea matcha with steamed milk.</p>
+        <span class="price">₱135</span>
+        <div class="rating">⭐️⭐️⭐️⭐️☆</div>
+        <button onclick="addToCart('Matcha Latte', 135)">Add to Cart</button>
+      </div>
+
+      <!-- Pastries -->
+      <div class="product-card" data-category="Pastry">
+        <img src="images/muffin.jpg" alt="Blueberry Muffin">
+        <h3>Blueberry Muffin</h3>
+        <p>Soft, moist muffin filled with fresh blueberries.</p>
+        <span class="price">₱80</span>
+        <div class="rating">⭐️⭐️⭐️⭐️☆</div>
+        <button onclick="addToCart('Blueberry Muffin', 80)">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="Pastry">
+        <img src="images/croissant.jpg" alt="Butter Croissant">
+        <h3>Butter Croissant</h3>
+        <p>Flaky, buttery French classic.</p>
+        <span class="price">₱75</span>
+        <div class="rating">⭐️⭐️⭐️⭐️☆</div>
+        <button onclick="addToCart('Butter Croissant', 75)">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="Pastry">
+        <img src="images/donut.jpg" alt="Chocolate Donut">
+        <h3>Chocolate Donut</h3>
+        <p>Soft donut coated in chocolate.</p>
+        <span class="price">₱85</span>
+        <div class="rating">⭐️⭐️⭐️⭐️☆</div>
+        <button onclick="addToCart('Chocolate Donut', 85)">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="Pastry">
+        <img src="images/brownie.jpg" alt="Fudge Brownie">
+        <h3>Fudge Brownie</h3>
+        <p>Rich chocolate brownie, chewy and decadent.</p>
+        <span class="price">₱95</span>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+        <button onclick="addToCart('Fudge Brownie', 95)">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="Pastry">
+        <img src="images/cookie.jpg" alt="Oatmeal Cookie">
+        <h3>Oatmeal Cookie</h3>
+        <p>Crunchy cookie with oatmeal goodness.</p>
+        <span class="price">₱60</span>
+        <div class="rating">⭐️⭐️⭐️⭐️☆</div>
+        <button onclick="addToCart('Oatmeal Cookie', 60)">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="Pastry">
+        <img src="images/cheesecake.jpg" alt="Cheesecake Slice">
+        <h3>Cheesecake Slice</h3>
+        <p>Creamy cheesecake slice, rich and smooth.</p>
+        <span class="price">₱120</span>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+        <button onclick="addToCart('Cheesecake Slice', 120)">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="Pastry">
+        <img src="images/cinnamon.jpg" alt="Cinnamon Roll">
+        <h3>Cinnamon Roll</h3>
+        <p>Sweet roll glazed with cream cheese icing.</p>
+        <span class="price">₱100</span>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+        <button onclick="addToCart('Cinnamon Roll', 100)">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="Pastry">
+        <img src="images/shortcake.jpg" alt="Strawberry Shortcake">
+        <h3>Strawberry Shortcake</h3>
+        <p>Layers of sponge cake with cream and strawberries.</p>
+        <span class="price">₱140</span>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+        <button onclick="addToCart('Strawberry Shortcake', 140)">Add to Cart</button>
+      </div>
+
+      <!-- Merchandise -->
+      <div class="product-card" data-category="Merch">
+        <img src="images/tumbler.jpg" alt="Brew Haven Tumbler">
+        <h3>Brew Haven Tumbler</h3>
+        <p>Reusable stainless tumbler, eco-friendly.</p>
+        <span class="price">₱300</span>
+        <div class="rating">⭐️⭐️⭐️⭐️☆</div>
+        <button onclick="addToCart('Brew Haven Tumbler', 300)">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="Merch">
+        <img src="images/mug.jpg" alt="Coffee Mug">
+        <h3>Coffee Mug</h3>
+        <p>Classic ceramic mug with Brew Haven logo.</p>
+        <span class="price">₱150</span>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+        <button onclick="addToCart('Coffee Mug', 150)">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="Merch">
+        <img src="images/totebag.jpg" alt="Eco Tote Bag">
+        <h3>Eco Tote Bag</h3>
+        <p>Eco-friendly tote bag for daily essentials.</p>
+        <span class="price">₱200</span>
+        <div class="rating">⭐️⭐️⭐️⭐️☆</div>
+        <button onclick="addToCart('Eco Tote Bag', 200)">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="Merch">
+        <img src="images/cap.jpg" alt="Cafe Cap">
+        <h3>Cafe Cap</h3>
+        <p>Comfortable cap with Brew Haven logo.</p>
+        <span class="price">₱180</span>
+        <div class="rating">⭐️⭐️⭐️⭐️☆</div>
+        <button onclick="addToCart('Cafe Cap', 180)">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="Merch">
+        <img src="images/stickers.jpg" alt="Sticker Set">
+        <h3>Sticker Set</h3>
+        <p>Collection of Brew Haven themed stickers.</p>
+        <span class="price">₱50</span>
+        <div class="rating">⭐️⭐️⭐️⭐️⭐️</div>
+        <button onclick="addToCart('Sticker Set', 50)">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="Merch">
+        <img src="images/pin.jpg" alt="Cafe Pin Badge">
+        <h3>Cafe Pin Badge</h3>
+        <p>Collectible pin with coffee logo design.</p>
+        <span class="price">₱90</span>
+        <div class="rating">⭐️⭐️⭐️⭐️☆</div>
+        <button onclick="addToCart('Cafe Pin Badge', 90)">Add to Cart</button>
+      </div>
+    </div>
+
+
+    <!-- Cart Drawer -->
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <strong>Your Cart</strong>
+        <button class="secondary" onclick="closeCart()">Close</button>
+      </div>
+      <div class="cart-items"></div>
+      <div class="cart-footer">
+        <div style="display:flex;justify-content:space-between;margin-bottom:8px">
+          <span>Total</span><strong class="cart-total">₱0.00</strong>
+        </div>
+        <button>Checkout</button>
+      </div>
+    </div>
+  </section>
+
+  <footer><div class="container">© 2025 Brew Haven Coffee Shop</div></footer>
+</body>
+</html>

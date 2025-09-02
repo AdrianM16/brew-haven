@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Brew Haven</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        <span class="logo-icon">☕</span>
+        Brew Haven
+      </a>
+      <button class="menu-toggle">Menu ☰</button>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a class="active" href="contact.html">Contact</a></li>
+          <li>
+            <a class="cart-link" href="javascript:void(0)" onclick="openCart()">
+              Cart <span class="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>Get in Touch with Brew Haven</h1>
+      <p>Have a question or suggestion? We’d love to hear from you!</p>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM SECTION -->
+  <section class="section">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form data-contact>
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your Name" required>
+        </div>
+        <div>
+          <label for="phone">Contact Number</label>
+          <input id="phone" name="phone" type="text" placeholder="09xx xxx xxxx" required>
+        </div>
+        <div>
+          <label for="email">Email Address</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required>
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="How can we help?" required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+        <div id="formMessages" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- CONTACT INFO & MAP -->
+  <section class="section">
+    <div class="container grid grid-3">
+      <div class="card">
+        <h3>Our Location</h3>
+        <p><strong>Address:</strong> 4952 Coffee Street, Manila, PH</p>
+        <p><strong>Phone:</strong> 0912-345-6789</p>
+        <p><strong>Email:</strong> hello@brewhaven.ph</p>
+        <p><strong>Hours:</strong> Mon–Sat 8:00–20:00</p>
+      </div>
+      <div class="card">
+        <h3>Find Us on Map</h3>
+        <iframe title="Map" src="https://maps.google.com/maps?q=manila&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CART DRAWER -->
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <strong>Your Cart</strong>
+      <button class="secondary" onclick="closeCart()">Close</button>
+    </div>
+    <div class="cart-items"></div>
+    <div class="cart-footer">
+      <div style="display:flex;justify-content:space-between;margin-bottom:8px">
+        <span>Total</span><strong class="cart-total">₱0.00</strong>
+      </div>
+      <button>Checkout</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>© 2025 Brew Haven Coffee Shop</p>
+    </div>
+  </footer>
+
+</body>
+</html>
